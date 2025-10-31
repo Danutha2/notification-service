@@ -56,6 +56,7 @@ export class NotificationGateway implements OnGatewayConnection, OnGatewayDiscon
 
   sendNotificationToUser(email: string, message: string, fileName?: string) {
     const client = this.emailSocketMap.get(email);
+    this.logger.debug(`Client is ${client}`)
 
     if (!client) {
       this.logger.warn(`[Notification] No active socket for email | email=${email}, message="${message}"`);
