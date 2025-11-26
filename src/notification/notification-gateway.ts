@@ -70,7 +70,7 @@ export class NotificationGateway implements OnGatewayConnection, OnGatewayDiscon
       fileName: fileName ?? null, 
     };
 
-    client.emit('export-notification', notification);
+    client.emit('notification', notification);
 
     this.logger.log(
       `[Notification] Sent notification | email=${email}, message="${message}", fileName="${fileName ?? 'N/A'}", notificationId=${notification.id}`,
